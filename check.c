@@ -16,6 +16,7 @@ int check(const char *format, int count, int i)
 	if (!count && format[i] != '%')
 	{
 		len++;
+		len++;
 		_putchar('%');
 		_putchar(format[i]);
 	}

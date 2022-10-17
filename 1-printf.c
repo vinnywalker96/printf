@@ -21,14 +21,14 @@ int _printf(const char *format, ...)
 		{'s', puts_str}
 	};
 
-	if (format || (format[0] == '%' && format[1] == 0))
+	if (format == NULL || (format[0] == '%' && format[1] == 0))
 	{
 		return (-1);
 	}
 
 	va_start(args, format);
 
-	while (!format && format[i])
+	while (format != NULL  && format[i])
 	{
 		if (format[i] != '%')
 		{

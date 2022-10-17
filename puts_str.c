@@ -10,7 +10,7 @@ int puts_str(va_list args)
 {
 	int i;
 	int j;
-	char *str = "(null)";
+	char str[] = "(null)";
 	char *s = va_arg(args, char *);
 
 	if (s == NULL)
@@ -23,9 +23,9 @@ int puts_str(va_list args)
 		return (6);
 	}
 
-	for (j = 0; str[j] != '\0'; j++)
+	for (j = 0; s[j] != '\0'; j++)
 	{
-		_putchar(str[j]);
+		_putchar(s[j]);
 	}
 
 	return (j);
