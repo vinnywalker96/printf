@@ -1,35 +1,49 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define BUFSIZE 1024
-
-#include <limits.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <stdarg.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 /**
-  * struct params - struct params
-  * @op: struct operator
-  * @f: function
-  */
-
-typedef struct params
+* struct arg_types - Struct op
+*
+* @ch: The operator
+* @dt: The function associated
+*/
+typedef struct arg_types
 {
-	char op;
-	int (*f)(va_list args_t);
-} params_t;
+	char ch;
+	int (*dt)(va_list args);
+} args_t;
 
 
-/* Function prototypes */
-
+/* Functions Prototypes */
 int _printf(const char *format, ...);
-int _putchar(char c);
-int puts_char(va_list args);
-int puts_str(va_list args);
-int check(const char *format, int count, int i);
-char *print_digit(unsigned long int num, int base, int lowercase);
 
+int _putchar(char c);
+
+int _puts(char *str);
+
+int print_uns_num(unsigned int n);
+
+int hex_check(int num, char case_type);
+
+int p_char(va_list args);
+
+int p_str(va_list args);
+
+int p_nums(va_list args);
+
+int dec_to_bin(va_list args);
+
+int p_uns_num(va_list args);
+
+int dec_to_oct(va_list args);
+
+int dec_to_hex(va_list args);
+
+int dec_to_HEX(va_list args);
 
 #endif
